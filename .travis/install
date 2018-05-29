@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+curl -O https://raw.githubusercontent.com/kerl/kerl/master/kerl
+chmod +x kerl
+mkdir -p .kerl/builds/master
+touch .kerl/builds/master/otp_build.log

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+tail -f .kerl/builds/master/otp_build.log &
+TAIL_PID=$!
+
+./kerl build git https://github.com/erlang/otp.git master master
+./kerl install master master
+
+kill $TAIL_PID

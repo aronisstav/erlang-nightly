@@ -1,0 +1,13 @@
+language: minimal
+
+sudo: false
+
+addons:
+  apt:
+    packages:
+      - autoconf
+      - build-essential
+
+install: '.travis/install'
+
+script: '.travis/script'
