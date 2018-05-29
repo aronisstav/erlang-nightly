@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -ex
+
 curl -O https://raw.githubusercontent.com/kerl/kerl/master/kerl
 chmod +x kerl
 mkdir -p .kerl/builds/master
