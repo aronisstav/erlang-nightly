@@ -2,6 +2,10 @@ language: minimal
 
 sudo: false
 
+branches:
+  only:
+  - master
+
 install: '.travis/install'
 
 script: '.travis/script'
