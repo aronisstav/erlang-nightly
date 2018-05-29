@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -ex
+set -x
 
 tail -F .kerl/builds/master/otp_build.log &
 TAIL_PID=$!
