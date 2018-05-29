@@ -2,7 +2,7 @@
 
 set -ex
 
-tail -f .kerl/builds/master/otp_build.log &
+tail -F .kerl/builds/master/otp_build.log &
 TAIL_PID=$!
 
 ./kerl build git https://github.com/erlang/otp.git master master
