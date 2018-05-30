@@ -20,8 +20,6 @@ export KERL_BUILD_DIR="$KERL_BASE_DIR/builds"
 LOGFILE="$KERL_BUILD_DIR/$BUILD/otp_build_git.log"
 
 rm -rf "$KERL_BASE_DIR"
-mkdir -p $(dirname "$LOGFILE")
-touch "$LOGFILE"
 
 {
     echo "Begin tailing..."
@@ -38,5 +36,5 @@ trap cleanup EXIT
 
 yes | head -20 > $LOGFILE
 
-. ./kerl build git "$OTP_GITHUB_REPO" "$BRANCH" "$BUILD"
-. ./kerl install "$BUILD" "$RELEASE"
+./kerl build git "$OTP_GITHUB_REPO" "$BRANCH" "$BUILD"
+./kerl install "$BUILD" "$RELEASE"
