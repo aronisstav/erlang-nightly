@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+. common
+
+set -vxe
+
+OTP_GITHUB_REPO="https://github.com/erlang/otp.git"
+
+LOGFILE="$KERL_BUILD_DIR/otp_build_git.log"
+
+tail -F "$LOGFILE" &
+TAIL_PID=$!
+
+function cleanup {
+    kill $TAIL_PID
+}
+trap cleanup EXIT
+
+./kerl build git "$OTP_GITHUB_REPO" "$BRANCH" "$BUILD"

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+. common
+
+set -vx
+
+ARCHIVE="$BUILD.tar.gz"
+
+tar -czf "$ARCHIVE" "$KERL_BUILDS_DIR"
+
+git tag "nightly"

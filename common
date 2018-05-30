@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+BRANCH=$1
+
+if [ -z "$BRANCH" ]; then
+    echo "usage: $(basename $0) <branch>"
+    exit 1
+fi
+
+export KERL_BASE_DIR="$(pwd)/kerl_nightly"
+
+export KERL_BUILDS_DIR="$KERL_BASE_DIR/builds"
+
+export BUILD="$BRANCH-nightly"
+
+export KERL_BUILD_DIR="$KERL_BUILD_DIR/$BUILD"
