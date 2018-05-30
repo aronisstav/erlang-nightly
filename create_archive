@@ -17,3 +17,5 @@ RELEASE="$BUILD-release"
 ARCHIVE="$RELEASE.tar.gz"
 
 tar -czf "$ARCHIVE" "$RELEASE"
+
+git tag "nigthly"
