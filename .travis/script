@@ -36,5 +36,7 @@ function cleanup {
 
 trap cleanup EXIT
 
+yes | head -20 > $LOGFILE
+
 . ./kerl build git "$OTP_GITHUB_REPO" "$BRANCH" "$BUILD"
 . ./kerl install "$BUILD" "$RELEASE"
