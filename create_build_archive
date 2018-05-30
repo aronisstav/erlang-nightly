@@ -6,4 +6,4 @@ set -vx
 
 ARCHIVE="$BUILD.tar.gz"
 
-tar -czf "$ARCHIVE" "$KERL_BUILD_DIR/release_git"
+tar -czf "$ARCHIVE" -C "$KERL_BUILDS_DIR" "$BUILD/release_git"
