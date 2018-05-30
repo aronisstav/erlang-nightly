@@ -1,11 +1,11 @@
 language: minimal
 
-sudo: false
-
 branches:
   only:
   - master
 
-install: '.travis/install'
+install: 'get_kerl'
 
-script: '.travis/script master'
+script: 'kerl_build_and_install master'
+
+before_deploy: 'pack_release'

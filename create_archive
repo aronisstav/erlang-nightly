@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+BRANCH=$1
+
+if [ -z "$BRANCH" ]; then
+    echo "usage: $(basename $0) <branch>"
+    exit 1
+fi
+
+set -vx
+
+OTP_GITHUB_REPO="https://github.com/erlang/otp.git"
+
+BUILD="$BRANCH-nightly-build"
+RELEASE="$BUILD-release"
+
+ARCHIVE="$RELEASE.tar.gz"
+
+tar -czf "$ARCHIVE" "$RELEASE"
