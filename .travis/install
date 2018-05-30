@@ -5,5 +5,6 @@ set -ex
 curl -O https://raw.githubusercontent.com/kerl/kerl/master/kerl
 chmod +x kerl
 
-mkdir -p .kerl/builds/master
+rm -rf $HOME/.kerl
+mkdir -p $HOME/.kerl/builds/master
 touch $HOME/.kerl/builds/master/otp_build_git.log
