@@ -23,7 +23,11 @@ rm -rf "$KERL_BASE_DIR"
 mkdir -p $(dirname "$LOGFILE")
 touch "$LOGFILE"
 
-tail -F "$LOGFILE" &
+{
+    echo "Begin tailing..."
+    tail -F "$LOGFILE"
+    echo "Cease tailing"
+} &
 TAIL_PID=$!
 
 function cleanup {
