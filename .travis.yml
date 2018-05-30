@@ -8,4 +8,4 @@ install: 'get_kerl'
 
 script: 'kerl_build_and_install master'
 
-before_deploy: 'pack_release'
+before_deploy: 'pack_release master'
