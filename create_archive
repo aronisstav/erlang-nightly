@@ -18,4 +18,4 @@ ARCHIVE="$RELEASE.tar.gz"
 
 tar -czf "$ARCHIVE" "$RELEASE"
 
-git tag "nigthly"
+git tag "nightly"

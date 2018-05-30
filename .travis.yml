@@ -8,6 +8,7 @@ before_deploy: './create_archive master'
 deploy:
   provider: releases
   skip_cleanup: true
+  overwrite: true
   api_key:
     secure: 6lrLZz5UI5iSeidh/GcoKQz0sinpToDJdJUgdb6ETzv2ikX0gjzgw90x+jTwwJ3dXbmlNKUkWrScbmflnXFyhuuEU7shqWbch4b2bzYL3qdAgi1TxKioJZFjarTe9XM2dfGYVauoZU3qLsU85OIo++602DxYV4jkg50GPMaZA7H0ezZNXJqiBiBnKIh6sm6cAK2D+GkXYse3K3kQ8LGB1+tyRkBFCShs+JzUZz/OC59Vs79A4QcClxCuSnZ/kgq8+xwAilInX7kR6b3hy3w51+1vb//DbdZ9nKGThI8BaUkoIrrblF95nTZzP+NjBFNy5hEWx+L1xhxwfFJHRCkDE58LxCT+yWS/dKIQqPh9OKIQTWUPAGNe4RiWMG2ivvtPfRVlsr8tloaigBc65fuMULHf8Ew66TiRJS+X6faP1fUt4oTUOdVE1jak4jGmyGYGnU7Nm1i7QOFuM6ISWWssPJOyj6rJYk2/HWG2ucRNISW+kc8+j9+mBDaviI73IntChI1IAreCmA8SlW4shHWzc2TP3xPK0GOgxSUJIl64+NHD5zQDR9nUF13886FLgERYWuWSK/XnEk40xt0x/b3pu8YJ8/MvcwxNR65MV/bTWvl4lt7ZKVvA5LtK/Xw0Dlt8ukDYtyQlm37uJS4XIMFXiU1rOR/xjAVcr8YPd9WX1p8=
   file: master-nightly-build-release.tar.gz
