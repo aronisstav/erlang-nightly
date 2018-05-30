@@ -21,20 +21,13 @@ LOGFILE="$KERL_BUILD_DIR/$BUILD/otp_build_git.log"
 
 rm -rf "$KERL_BASE_DIR"
 
-{
-    echo "Begin tailing..."
-    tail -F "$LOGFILE"
-    echo "Cease tailing"
-} &
+tail -F "$LOGFILE" &
 TAIL_PID=$!
 
 function cleanup {
     kill $TAIL_PID
 }
-
 trap cleanup EXIT
-
-yes | head -20 > $LOGFILE
 
 ./kerl build git "$OTP_GITHUB_REPO" "$BRANCH" "$BUILD"
 ./kerl install "$BUILD" "$RELEASE"
