@@ -7,7 +7,7 @@ if [ -z "$BRANCH" ]; then
     exit 1
 fi
 
-set -x
+set -vx
 
 OTP_GITHUB_REPO="https://github.com/erlang/otp.git"
 
