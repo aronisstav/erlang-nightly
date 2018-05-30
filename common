@@ -9,8 +9,8 @@ fi
 
 export KERL_BASE_DIR="$(pwd)/kerl_nightly"
 
-export KERL_BUILDS_DIR="$KERL_BASE_DIR/builds"
+KERL_BUILDS_DIR="$KERL_BASE_DIR/builds"
 
-export BUILD="$BRANCH-nightly"
+BUILD="$BRANCH-nightly"
 
-export KERL_BUILD_DIR="$KERL_BUILDS_DIR/$BUILD"
+KERL_BUILD_DIR="$KERL_BUILDS_DIR/$BUILD"
