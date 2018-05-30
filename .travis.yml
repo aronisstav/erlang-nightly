@@ -8,4 +8,4 @@ branches:
 
 install: '.travis/install'
 
-script: '.travis/script'
+script: '.travis/script master'

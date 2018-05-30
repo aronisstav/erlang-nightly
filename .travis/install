@@ -2,9 +2,7 @@
 
 set -ex
 
-curl -O https://raw.githubusercontent.com/kerl/kerl/master/kerl
-chmod +x kerl
+KERL_URL="https://raw.githubusercontent.com/kerl/kerl/master/kerl"
 
-rm -rf $HOME/.kerl
-mkdir -p $HOME/.kerl/builds/master
-touch $HOME/.kerl/builds/master/otp_build_git.log
+curl -O "$KERL_URL"
+chmod +x kerl

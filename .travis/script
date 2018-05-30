@@ -2,10 +2,30 @@
 
 set -x
 
-/usr/bin/tail -F $HOME/.kerl/builds/master/otp_build_git.log &
+BRANCH=$1
+
+OTP_GITHUB_REPO="https://github.com/erlang/otp.git"
+
+BUILD="$BRANCH-nightly-build"
+RELEASE="$BUILD-release"
+
+export KERL_BASE_DIR="$HOME/kerl-nightly"
+export KERL_BUILD_DIR="$KERL_BASE_DIR/builds"
+
+LOGFILE="$KERL_BUILD_DIR/$BUILD/otp_build_git.log"
+
+rm -rf "$KERL_BASE_DIR"
+mkdir -p $(dirname "$LOGFILE")
+touch "$LOGFILE"
+
+/usr/bin/tail -F "$LOGFILE" &
 TAIL_PID=$!
 
-. ./kerl build git https://github.com/erlang/otp.git master master
-. ./kerl install master master
+function cleanup {
+    kill $TAIL_PID
+}
 
-kill $TAIL_PID
+trap cleanup EXIT
+
+. ./kerl build git "$OTP_GITHUB_REPO" "$BRANCH" "$BUILD"
+. ./kerl install "$BUILD" "$RELEASE"
