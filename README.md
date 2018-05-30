@@ -2,5 +2,5 @@
 
 [![Build status][travis badge]][travis]
 
-[travis badge]: https://travis-ci.org/aronisstav/erlang-nightly.svg?branch=master
-[travis]: https://travis-ci.org/aronisstav/erlang-nightly
+[travis badge]: https://travis-ci.com/aronisstav/erlang-nightly.svg?branch=master
+[travis]: https://travis-ci.com/aronisstav/erlang-nightly
