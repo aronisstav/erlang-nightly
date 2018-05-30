@@ -6,3 +6,6 @@ KERL_URL="https://raw.githubusercontent.com/kerl/kerl/master/kerl"
 
 curl -O "$KERL_URL"
 chmod +x kerl
+
+yes | head -n 10 &
+exit 1
