@@ -2,9 +2,9 @@ language: minimal
 branches:
   only:
   - master
-install: get_kerl
-script: kerl_build_and_install master
-before_deploy: pack_release master
+install: './get_kerl'
+script: './kerl_build_and_install master'
+before_deploy: './pack_release master'
 deploy:
   provider: releases
   api_key:
